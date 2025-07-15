@@ -144,8 +144,8 @@ test-results.browser.xml
 __screenshots__
 
 # tshy
-.tshy
-.tshy-build
+.tshy/
+.tshy-build/
 
 # Turbo
-.turbo
+.turbo/
