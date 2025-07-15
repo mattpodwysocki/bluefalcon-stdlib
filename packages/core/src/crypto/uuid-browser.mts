@@ -1,8 +1,10 @@
+import { getRandomIntegerInclusive } from "./random.js";
+
 function generateUUID(): string {
   let uuid = "";
   for (let i = 0; i < 32; i++) {
     // Generate a random number between 0 and 15
-    const randomNumber = Math.floor(Math.random() * 16);
+    const randomNumber = getRandomIntegerInclusive(0, 15);
     // Set the UUID version to 4 in the 13th position
     if (i === 12) {
       uuid += "4";
