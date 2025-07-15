@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": true,
+    "composite": true,
+    "skipLibCheck": true
+  },
+  "include": ["${configDir}/test", "${configDir}/src"]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@bluefalcon/monorepo",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.12.4",
+  "devDependencies": {
+    "turbo": "^2.5.4"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "format:check": "turbo run format:check",
+    "format:fix": "turbo run format:fix",
+    "lint:check": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "pack": "turbo run pack",
+    "test": "turbo run test",
+    "test:browser": "turbo run test:browser",
+    "test:node": "turbo run test:node"
+  },
+  "keywords": [],
+  "author": "Matthew Podwysocki",
+  "license": "MIT",
+  "description": "Monorepo for the Standard Library of JavaScript Algorithms and Data Structures"
+}

@@ -1,0 +1,156 @@
+{
+  "name": "@podwysocki/std-lib",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/commonjs/index.js",
+  "scripts": {
+    "build": "npm run clean && tshy",
+    "clean": "rimraf dist",
+    "format:check": "prettier --config ../../.prettierrc.json --ignore-path ../../.prettierignore --check  \"src/**/*.{ts,cts,mts}\" \"test/**/*.{ts,cts,mts}\" \"*.{js,cjs,mjs,json}\" ",
+    "format:fix": "prettier --config ../../.prettierrc.json  --ignore-path ../../.prettierignore  --write \"src/**/*.{ts,cts,mts}\" \"test/**/*.{ts,cts,mts}\" \"*.{js,cjs,mjs,json}\" ",
+    "lint:check": "eslint src test",
+    "lint:fix": "eslint src test --fix --fix-type [problem,suggestion]",
+    "pack": "npm pack 2>&1",
+    "postinstall": "npm run postinstall:playwright",
+    "postinstall:playwright": " npm exec playwright install --with-deps chromium",
+    "test": "npm run test:node && npm run test:browser",
+    "test:browser": "npm run clean && tshy && vitest --config vitest.browser.config.ts",
+    "test:node": "vitest --config vitest.config.ts"
+  },
+  "keywords": [],
+  "author": "Matthew Podwysocki",
+  "license": "MIT",
+  "description": "Algorithms and data structures in JavaScript",
+  "dependencies": {
+    "tslib": "catalog:"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "@types/node": "catalog:",
+    "@vitest/browser": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:",
+    "eslint": "catalog:",
+    "playwright": "catalog:",
+    "prettier": "catalog:",
+    "rimraf": "catalog:",
+    "tshy": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
+    "vitest": "catalog:"
+  },
+  "tshy": {
+    "project": "./tsconfig.src.json",
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts",
+      "./collections": "./src/collections/index.ts",
+      "./crypto": "./src/crypto/index.ts",
+      "./net": "./src/net/index.ts",
+      "./tasks": "./src/tasks/index.ts"
+    },
+    "dialects": [
+      "esm",
+      "commonjs"
+    ],
+    "esmDialects": [
+      "react-native",
+      "browser"
+    ],
+    "selfLink": false
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "react-native": {
+        "types": "./dist/react-native/index.d.ts",
+        "default": "./dist/react-native/index.js"
+      },
+      "browser": {
+        "types": "./dist/browser/index.d.ts",
+        "default": "./dist/browser/index.js"
+      },
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./collections": {
+      "react-native": {
+        "types": "./dist/react-native/collections/index.d.ts",
+        "default": "./dist/react-native/collections/index.js"
+      },
+      "browser": {
+        "types": "./dist/browser/collections/index.d.ts",
+        "default": "./dist/browser/collections/index.js"
+      },
+      "import": {
+        "types": "./dist/esm/collections/index.d.ts",
+        "default": "./dist/esm/collections/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/collections/index.d.ts",
+        "default": "./dist/commonjs/collections/index.js"
+      }
+    },
+    "./crypto": {
+      "react-native": {
+        "types": "./dist/react-native/crypto/index.d.ts",
+        "default": "./dist/react-native/crypto/index.js"
+      },
+      "browser": {
+        "types": "./dist/browser/crypto/index.d.ts",
+        "default": "./dist/browser/crypto/index.js"
+      },
+      "import": {
+        "types": "./dist/esm/crypto/index.d.ts",
+        "default": "./dist/esm/crypto/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/crypto/index.d.ts",
+        "default": "./dist/commonjs/crypto/index.js"
+      }
+    },
+    "./net": {
+      "react-native": {
+        "types": "./dist/react-native/net/index.d.ts",
+        "default": "./dist/react-native/net/index.js"
+      },
+      "browser": {
+        "types": "./dist/browser/net/index.d.ts",
+        "default": "./dist/browser/net/index.js"
+      },
+      "import": {
+        "types": "./dist/esm/net/index.d.ts",
+        "default": "./dist/esm/net/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/net/index.d.ts",
+        "default": "./dist/commonjs/net/index.js"
+      }
+    },
+    "./tasks": {
+      "react-native": {
+        "types": "./dist/react-native/tasks/index.d.ts",
+        "default": "./dist/react-native/tasks/index.js"
+      },
+      "browser": {
+        "types": "./dist/browser/tasks/index.d.ts",
+        "default": "./dist/browser/tasks/index.js"
+      },
+      "import": {
+        "types": "./dist/esm/tasks/index.d.ts",
+        "default": "./dist/esm/tasks/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/tasks/index.d.ts",
+        "default": "./dist/commonjs/tasks/index.js"
+      }
+    }
+  },
+  "types": "./dist/commonjs/index.d.ts",
+  "module": "./dist/esm/index.js"
+}
