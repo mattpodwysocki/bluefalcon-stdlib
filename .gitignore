@@ -149,3 +149,6 @@ __screenshots__
 
 # Turbo
 .turbo/
+
+# MacOS
+.DS_Store
